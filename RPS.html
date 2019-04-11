@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>RockPaperScissors</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="RPS.css" rel="stylesheet" type="text/css"/>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+        <script src="https://code.jquery.com/jquery-3.3.1.js"   
+                integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="  
+        crossorigin="anonymous"></script>
+        <script>
+            function play(strChoice) {
+
+                xhttp = new XMLHttpRequest();
+
+                xhttp.onreadystatechange = function () {
+                    if (xhttp.readyState == 4 && xhttp.status == 200) {
+                        document.getElementById('choice').innerHTML = xhttp.responseText;
+
+                    }
+                };
+
+                xhttp.open('GET', 'gameFunctions.php?choice=' + strChoice);
+                xhttp.send();
+            }
+//            ;
+//            $(document).ready(function () {
+//                $("h1").click(function () {
+//                    $(this).hide();
+//                });
+//            });
+//            $(document).ready(function () {
+//                $("button").click(function () {
+//                    $("p").hide();
+//                });
+//            });
+//            $("*") - selects all elements 
+
+//                alert(strChoice)
+
+//                $.get('gameFunctions.php?choice=' + strChoice, function (data) {
+//                    $("#choice").html(data);
+//                   
+//                });
+//            }
+//            ;
+
+        </script>
+    </head>
+    <body>
+        <div class="text-center">
+            <h1> Rock, Paper, Scissors Game</h1>
+        </div>
+        <div class=container>
+            <div class="row" >
+                <div class="col-md-4">
+                    <button  id= "pic" onclick= "play('R')">  <img src = "https://images-na.ssl-images-amazon.com/images/I/71lkx%2BIsNgL.png", height = "200px", width="200px">
+                    </button> <br>
+                </div>
+                <div class="col-md-4">
+                    <button  id= "pic" onclick= "play('P')">  <img src= "https://images-na.ssl-images-amazon.com/images/I/71LOHamXEYL._SY450_.png", height = "200px", width="200px">
+                    </button><br>
+                </div>
+                <div  id= "pic" class= "col-md-4">
+                    <button onclick= "play('S')"> <img src = "https://images-na.ssl-images-amazon.com/images/I/71W8Y-olwUL.png", height = "200px", width="200px">
+                    </button>
+                </div >
+            </div >
+            <br>
+            <br>
+
+            <div class="text-center" class="border border-primary">
+                <div class="text" id ="choice">
+                </div>
+            </div>
+
+            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js">
+                    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.bundle.min.js">
+            </body>
+                </html>
